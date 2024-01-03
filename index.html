@@ -1,4 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Chris's ContentKeeper Page </title>
+</head>
+<body>
+<style>
+   p {
+       display: inline-block;
+   }
+</style>
+
+<p>Your IP Address</p>: <p id="ipAddress"></p>
+<h3>Common Blocked Websites</h3>
+<ul>
+ <li><a href="https://www.poker.com">Poker.com - Category Gambling</a></li>
+ <li><a href="https://www.tiktok.com">Tiktok.com - Category Adult Content & Social Media</a></li>
+ <li><a href="http://209.240.132.16">209.240.132.16 - IPMonkey.Com - DirectIP Website Block</a></li>
+ <li><a href="https://www.FakeDomainWebsite.com">www.FakeDomainWebsite.com - Non-Managed</a></li>
+ <li><a href="https://sites.google.com/site/classroom6x/unblockedgames"> Google Sites Unblocked Games - Web 2.0 Unblock Test (REQUIRES DECRYPTION)</a></li>
+ <li><a href="https://www.google.com/search?q=xxx">Google Search for XXX Keyword Block (REQUIRES DECRYPTION)</a></li>
+</ul>
+<a href "https://www.youtube.com/check_content_restrictions"> YouTube Check Content Restrictions</a>
+<br>
+<h5> Embedded Vimeo Video</h5>
 <iframe src="https://player.vimeo.com/video/23848422?h=3f89ce490a" width="640" height="480" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/23848422">Forest</a> from <a href="https://vimeo.com/aleksikoskinen">Aleksi Koskinen</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
+<br>
+<h5> Embedded YouTube Video</h5>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xNN7iTA57jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <script>
+   fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ipAddress = data.ip;
+      document.getElementById('ipAddress').innerText = ipAddress;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+ </script>
+</body>
+</html>
